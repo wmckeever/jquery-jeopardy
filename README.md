@@ -14,6 +14,7 @@ Check out a demo of what this might look like below:
   * If they are correct, their score is updated
 * The user's score should be saved even if the page is refreshed
 * jQuery is used throughout the Javascript instead of `document.createElement`, `document.querySelector`, etc.
+* Your project is hosted on GitHub pages
 
 ## Overview
 
