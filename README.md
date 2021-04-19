@@ -48,11 +48,11 @@ For the base assignment, if the user clicks a $200 question, the app will displa
   * `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>`
 
 
-#### 2. Build the grid of $ amounts
+#### 2. Build the layout of dollar amounts
 
 Write code to build the grid of $100, $200, etc. This could be done in `index.html`, but I'd recommend doing this through `main.js` using the jQuery equivalents of `document.createElement` and `.appendChild`.
 
-Also add some style rules in `styles.css` to make things look reasonable.
+Also, add some style rules in `styles.css` to make things look reasonable.
 
 #### 3. Get a Jeopardy question
 
