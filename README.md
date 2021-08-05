@@ -17,10 +17,10 @@ Check out a demo of what this might look like below:
 
 ## Overview
 
-Included in this assignment is `jeopardy.js`, a file defines a variable "QUESTIONS" which is an array that contains ~50,000 Jeopardy questions. It looks like this:
+Included in this assignment is `jeopardy.json`, a file that contains an array with ~50,000 Jeopardy questions. It looks like this:
 
 ```javascript
-const QUESTIONS = [
+[
   {
     "showNumber": 4680,
     "date": "12/31/04",
@@ -42,7 +42,7 @@ For the base assignment, if the user clicks a $200 question, the app will displa
 #### 1. Create your files
 
 * Start off by creating an `index.html`, `main.js`, and `styles.css`
-* In `index.html`, add two `script` tags to import firt `jeopardy.js` followed by `main.js`
+* In `index.html`, add two `script` tags to import firt `jeopardy.json` followed by `main.js`
 * Also add a `link` tag to import `styles.css`
 * Finally, add `jquery` to your `index.html`. You can do this by adding the following line to your `<head>`
   * `<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>`
@@ -58,7 +58,7 @@ Also, add some style rules in `styles.css` to make things look reasonable.
 
 Now, make it so that when one of your $100, $200, etc. buttons are pressed, a random question of that dollar value is displayed. 
 
-To do this, use the global `QUESTIONS` variable defined in `jeopardy.js`. When one of the dollar amounts is clicked, you can filter the questions to only those with the correct dollar amount. Then, choose one of those questions randomly. It's okay that a different question is chosen each time even when you press the same button.
+To do this, make a `fetch` request to `jeopardy.json`. When one of the dollar amounts is clicked, you can filter the questions to only those with the correct dollar amount. Then, choose one of those questions randomly. It's okay that a different question is chosen each time even when you press the same button.
 
 Display this question on the DOM somewhere reasonable.
 
@@ -88,7 +88,7 @@ Finally, add code so that when the page loads, the browser checks local storage 
 
 * Make a square become grey and unclickable after being chosen.
 
-* Instead getting a random question everytime a button is pressed, populate the game with the questions from a single past Jeopardy game. To do this, randomly choose a valid 'show number' (see `jeopardy.js` data) and use all the questions with that show number. As part of this, display a category (found in the data) over each column of $ amounts.
+* Instead getting a random question everytime a button is pressed, populate the game with the questions from a single past Jeopardy game. To do this, randomly choose a valid 'show number' (see `jeopardy.json` data) and use all the questions with that show number. As part of this, display a category (found in the data) over each column of $ amounts.
 
 * Expanding on the previous two stretch goals, make the game fully refreshable. Grayed out squares should stay grayed out on refresh and the same questions and categories that were chosen for the game should persist on refresh as well. You'll probably want to add a reset button as part of these changes.
 
