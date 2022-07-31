@@ -80,9 +80,6 @@ First, create a place to put the score in the HTML.
 
 Now, anytime a user gets a quetion right, add the score of that question (i.e.: $200) to the user's total score. One challenge here will be converting the string `"$200"` to the number `200`.
 
-Additionally, use the brower's local storage to save this score each time you update it.
-
-Finally, add code so that when the page loads, the browser checks local storage to see if a saved score exists. If one does, that saved score is displayed instead of a default $0.
 
 ## Stretch goals
 
