@@ -1,6 +1,6 @@
 # jQuery Jeopardy
 
-Welcome to Jeopardy! In this assignment, you'll create an application that asks the user Jeopardy questions and save their score (even when the page is refreshed).
+Welcome to Jeopardy! In this assignment, you'll create an application that asks the user Jeopardy questions and keep track of their score.
 
 Check out a demo of what this might look like below:
 
@@ -12,7 +12,6 @@ Check out a demo of what this might look like below:
 * Upon clicking an dollar amount, a question is displayed
 * The user can submit an answer
   * If they are correct, their score is updated
-* The user's score should be saved even if the page is refreshed
 * Your project is hosted on GitHub pages
 
 ## Overview
