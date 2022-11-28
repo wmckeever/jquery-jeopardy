@@ -4,13 +4,142 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> 
+  
   <link rel="stylesheet" href="style.css">
+
   <title>Document</title>
 </head>
-<body>
- 
+
+ <div id="header">
+      <center>
+    <img src="./images/jeopardy-seeklogo.com.png" alt="the official jeopardy logo">
+      </center>
+ </div>
+
+  <div id="score">
+      <div id="scoreTotal">YOUR SCORE: 
+  </div>
   
-  <div class = "game-board">
+  </div>
+  <br>
+  <!-- game board squares -->
+  <div id = "game-board"class="container text-center">
+    <div id = row1 class="row">
+      <div class="col 100">
+        $100
+      </div>
+      <div class="col 100">
+        $100
+      </div>
+      <div class="col 100">
+        $100
+      </div>
+      <div class="col 100">
+        $100
+      </div>
+      <div class="col 100">
+        $100
+      </div>
+    </div>
+
+    <div id = "row2" class="row">
+      <div class="col 200">
+        $200
+      </div>
+      <div class="col 200">
+        $200
+      </div>
+      <div class="col 200">
+        $200
+      </div>
+      <div class="col 200">
+        $200
+      </div>
+      <div class="col 200">
+        $200
+      </div>
+    </div>
+
+    <div id = "row3" class="row">
+      <div class="col 400">
+        $400
+      </div>
+      <div class="col 400">
+        $400
+      </div>
+      <div class="col 400">
+        $400
+      </div>
+      <div class="col 400">
+        $400
+      </div>
+      <div class="col 400">
+        $400
+      </div>
+    </div>
+
+    <div id = "row4" class="row">
+      <div class="col 600">
+        $600
+      </div>
+      <div class="col 600">
+        $600
+      </div>
+      <div class="col 600">
+        $600
+      </div>
+      <div class="col 600">
+        $600
+      </div>
+      <div class="col 600">
+        $600
+      </div>
+    </div>
+
+    <div id = "row5"class="row">
+      <div class="col 800">
+        $800
+      </div>
+      <div class="col 800">
+        $800
+      </div>
+      <div class="col 800">
+        $800
+      </div>
+      <div class="col 800">
+        $800
+      </div>
+      <div class="col 800">
+        $800
+      </div>
+    </div>
+  </div>
+
+          <div id="question">
+            The question will appear here:
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Please Enter Your Answer" aria-label="answer" aria-describedby="button-addon2">
+            <button class="btn btn-warning" type="button" id="button-addon2">Submit</button>
+          </div>
+          
+          
+
+
+
+
+
+
+
+
+
+
+<!-- <div class = "game-board">
     
     <div class="box"></div>
     <div class="box"></div>
@@ -18,6 +147,8 @@
     <div class="box"></div>
     <div class="box"></div>
   </div>
+
+ -->
 
   <!-- install lodash -->
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>

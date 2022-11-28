@@ -12,3 +12,10 @@ let readJeopardyData = async () => {
     console.log(groupedData.$200);
 }
 readJeopardyData();
+
+
+//*<------------ querySelectors ------------>*//
+//*<--------------------------------------->*//
+
+let firstRowQuestions = document.querySelectorAll('#row .col');
+firstRowQuestions.innerHTML= "$100";
