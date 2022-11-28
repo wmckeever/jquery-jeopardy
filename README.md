@@ -1,5 +1,7 @@
 # jQuery Jeopardy
 
+(*****jquery optional)
+
 Welcome to Jeopardy! In this assignment, you'll create an application that asks the user Jeopardy questions and keep track of their score.
 
 Check out a demo of what this might look like below:
@@ -12,7 +14,6 @@ Check out a demo of what this might look like below:
 * Upon clicking an dollar amount, a question is displayed
 * The user can submit an answer
   * If they are correct, their score is updated
-* Your project is hosted on GitHub pages
 
 ## Overview
 
@@ -79,12 +80,13 @@ First, create a place to put the score in the HTML.
 
 Now, anytime a user gets a quetion right, add the score of that question (i.e.: $200) to the user's total score. One challenge here will be converting the string `"$200"` to the number `200`.
 
+#### 6. Gray Squares
+
+Make a square become gray and unclickable after being chosen.
 
 ## Stretch goals
 
-* Make a square become grey and unclickable after being chosen.
+* Make it so the user cannot click on another question until a guess is made for their currently clicked question.  
 
 * Instead getting a random question everytime a button is pressed, populate the game with the questions from a single past Jeopardy game. To do this, randomly choose a valid 'show number' (see `jeopardy.json` data) and use all the questions with that show number. As part of this, display a category (found in the data) over each column of $ amounts.
-
-* Expanding on the previous two stretch goals, make the game fully refreshable. Grayed out squares should stay grayed out on refresh and the same questions and categories that were chosen for the game should persist on refresh as well. You'll probably want to add a reset button as part of these changes.
 
