@@ -4,6 +4,7 @@
 //*<------------ querySelectors ------------>*//
 //*<--------------------------------------->*//
 
+let allQuestions = document.querySelectorAll('#game-board .col');
 let firstRowQuestions = document.querySelectorAll('#row1 .col');
 let secondRowQuestions = document.querySelectorAll('#row2 .col');
 let thirdRowQuestions = document.querySelectorAll('#row3 .col');
@@ -18,10 +19,11 @@ let fifthRowQuestions = document.querySelectorAll('#row5 .col');
 
 
 let question = document.querySelector('#question');
-let userInput = document.querySelector('.form-control');
-let submit = document.querySelector('.btn')
+let userInput = document.querySelector('input');
+let submit = document.querySelector('button')
 
-let scoreTotal = 0;
+let scoreSum = 0;
+let questionColor = false;
 
 
 // read the local jeopardy json file with async await
@@ -36,13 +38,57 @@ let readJeopardyData = async () => {
     console.log(groupedData);
     console.log(groupedData.$200);
 
-    // First row
+
+//*<------------ eventListeners for the questions ------------>*//
+//*<--------------------------------------------------------->*//
+  
+
+
+// // question highlight
+// for (let i = 0; i < allQuestions.length; i++) {
+//   allQuestions[i].addEventListener('mouseenter', function(){
+//     if(questionColor = false) {
+        
+//     }
+    
+//   }) 
+// };
+
+
+
+
+// First row
     for (let i = 0; i < firstRowQuestions.length; i++) {
       firstRowQuestions[i].addEventListener('click', function(){
       
-        let random100 = groupedData.$100[Math.round(Math.random() * groupedData.$100.length)];
+        let random100 =  groupedData.$100[Math.round(Math.random() * groupedData.$100.length)];
         question.innerHTML = `${random100.question}`
         console.log(random100.question);
+        console.log(random100.answer);
+        // console.log(typeof(random100.value));
+
+        submit.addEventListener('click', function(event){
+          event.preventDefault();
+          console.log("The submit button is working")
+          console.log("The user's answer is:" +  userInput.value)
+        
+                if(userInput.value.toLowerCase() === random100.answer.toLowerCase()){
+                  scoreSum += scoreSum + Number(random100.value);
+                  question.innerHTML = "Correct!"
+                  scoreAmount.innerHTML = `${scoreSum}`;
+                  console.log("random test");
+                }else {
+                  question.innerHTML = "Incorrect. Try again."
+                  console.log("random test 2");
+                }
+                
+        
+          userInput.value = "";
+          // question.innerHTML = "The question will appear here:";
+        });  
+         
+                  
+
       }) 
   };
       // Second row 
@@ -82,55 +128,44 @@ let readJeopardyData = async () => {
       }) 
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
-  readJeopardyData();
-  
-  
-  
-  //*<------------ functions ------------>*//
-  //*<--------------------------------------->*//
+readJeopardyData();
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  //*<------------ eventListeners ------------>*//
-  //*<--------------------------------------->*//
- 
-      
-  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 //*<------------ submit button------------>*//
-submit.addEventListener('click', function(){
-  console.log("The submit button is working")
-});
+// submit.addEventListener('click', function(event){
+//   event.preventDefault();
+//   console.log("The submit button is working")
+//   console.log("The user's answer is:" +  userInput)
+
+//         if(userInput.value.toLowerCase() === random100.answer.toLowerCase()){
+//           scoreAmount += parseInt(firstRowQuestions[i].value.substr(1));
+//           question.innerHTML = "Correct!"
+//           scoreAmount.innerHTML = `${scoreAmount + random100.value}`;
+//         }else{
+//               question.innerHTML = "Incorrect. Try again."
+//         }
+
+//   userInput.value = "";
+//   question.innerHTML = "The question will appear here:";
+// });
+
+
+// `${scoreAmount + random100.value}`;
+
