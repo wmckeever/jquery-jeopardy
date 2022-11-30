@@ -1,6 +1,4 @@
 
-
-
 //*<------------ querySelectors ------------>*//
 //*<--------------------------------------->*//
 
@@ -14,6 +12,9 @@ let fifthRowQuestions = document.querySelectorAll('#row5 .col');
 let question = document.querySelector('#question');
 let userInput = document.querySelector('input');
 let submit = document.querySelector('button')
+
+let theme = document.getElementById("jeopardy-theme");
+
 
 let scoreSum = 0;
 let questionColor = false;
@@ -32,14 +33,14 @@ let readJeopardyData = async () => {
     console.log(groupedData);
     console.log(groupedData.$200);
 
-
-//*<------------ eventListeners for the questions ------------>*//
-//*<--------------------------------------------------------->*//
-  
-//* First row
+    
+    //*<------------ Main Code------------>*//
+    //*<--------------------------------->*//
+    
+    
+    //* First row
     for (let i = 0; i < firstRowQuestions.length; i++) {
-      firstRowQuestions[i].addEventListener('click', function(){
-      
+        firstRowQuestions[i].addEventListener('click', function(){
         let random100 =  groupedData.$100[Math.round(Math.random() * groupedData.$100.length)];
         question.innerHTML = `${random100.question}`
         
@@ -51,25 +52,28 @@ let readJeopardyData = async () => {
         submit.addEventListener('click', function(event){
           event.preventDefault();
             console.log(userInput.value);
-            console.log(random100.answer.toLowerCase())
-
+                   
             if(userInput.value.toLowerCase() === random100.answer.toLowerCase()){
                   scoreSum += parseInt(random100.value.substr(1));
                   question.innerHTML = "Correct!"
                   scoreAmount.innerHTML = `$${scoreSum}`;
-                  firstRowQuestions[i].style.backgroundColor = "gold"; 
-                  firstRowQuestions[i].style.color = "blue"; 
-                  firstRowQuestions[i].style.textDecoration = "line-through"; 
-                  firstRowQuestions[i].style.textDecorationColor = "red"; 
+
+                      firstRowQuestions[i].style.backgroundColor = "gold"; 
+                      firstRowQuestions[i].style.color = "blue"; 
+                      firstRowQuestions[i].style.textDecoration = "line-through"; 
+                      firstRowQuestions[i].style.textDecorationColor = "red";
+
                   userInput.value = "";
                 }else {
-                  question.innerHTML = "Incorrect. Try again."
+                  question.innerHTML = `Incorrect. The correct answer is: ${random100.answer}`
+                  //userInput.value = "";
                   }
-                                  
-        });  
+                 
+            });  
              
       }) 
   };
+
       //* Second row 
     for (let i = 0; i < secondRowQuestions.length; i++) {
       secondRowQuestions[i].addEventListener('click', function(){
@@ -95,12 +99,11 @@ let readJeopardyData = async () => {
                       secondRowQuestions[i].style.textDecorationColor = "red"; 
                       userInput.value = "";
                     }else {
-                      question.innerHTML = "Incorrect. Try again."
+                      question.innerHTML = `Incorrect. The correct answer is: ${random200.answer}`
                     }     
             });  
       }) 
   };
-
 
       //* Third row 
     for (let i = 0; i < thirdRowQuestions.length; i++) {
@@ -121,13 +124,13 @@ let readJeopardyData = async () => {
                   scoreSum += parseInt(random400.value.substr(1));
                   question.innerHTML = "Correct!"
                   scoreAmount.innerHTML = `$${scoreSum}`;
-                  secondRowQuestions[i].style.backgroundColor = "gold"; 
-                  secondRowQuestions[i].style.color = "blue"; 
-                  secondRowQuestions[i].style.textDecoration = "line-through"; 
-                  secondRowQuestions[i].style.textDecorationColor = "red"; 
+                  thirdRowQuestions[i].style.backgroundColor = "gold"; 
+                  thirdRowQuestions[i].style.color = "blue"; 
+                  thirdRowQuestions[i].style.textDecoration = "line-through"; 
+                  thirdRowQuestions[i].style.textDecorationColor = "red"; 
                   userInput.value = "";
                 }else {
-                  question.innerHTML = "Incorrect. Try again."
+                  question.innerHTML = `Incorrect. The correct answer is: ${random400.answer}`
                 }     
         });  
       }) 
@@ -151,13 +154,13 @@ let readJeopardyData = async () => {
                       scoreSum += parseInt(random600.value.substr(1));
                       question.innerHTML = "Correct!"
                       scoreAmount.innerHTML = `$${scoreSum}`;
-                      secondRowQuestions[i].style.backgroundColor = "gold"; 
-                      secondRowQuestions[i].style.color = "blue"; 
-                      secondRowQuestions[i].style.textDecoration = "line-through"; 
-                      secondRowQuestions[i].style.textDecorationColor = "red"; 
+                      fourthRowQuestions[i].style.backgroundColor = "gold"; 
+                      fourthRowQuestions[i].style.color = "blue"; 
+                      fourthRowQuestions[i].style.textDecoration = "line-through"; 
+                      fourthRowQuestions[i].style.textDecorationColor = "red"; 
                       userInput.value = "";
                     }else {
-                      question.innerHTML = "Incorrect. Try again."
+                      question.innerHTML = `Incorrect. The correct answer is: ${random600.answer}`
                     }     
             });  
       }) 
@@ -181,13 +184,13 @@ let readJeopardyData = async () => {
                   scoreSum += parseInt(random800.value.substr(1));
                   question.innerHTML = "Correct!"
                   scoreAmount.innerHTML = `$${scoreSum}`;
-                  secondRowQuestions[i].style.backgroundColor = "gold"; 
-                  secondRowQuestions[i].style.color = "blue"; 
-                  secondRowQuestions[i].style.textDecoration = "line-through"; 
-                  secondRowQuestions[i].style.textDecorationColor = "red"; 
+                  fifthRowQuestions[i].style.backgroundColor = "gold"; 
+                  fifthRowQuestions[i].style.color = "blue"; 
+                  fifthRowQuestions[i].style.textDecoration = "line-through"; 
+                  fifthRowQuestions[i].style.textDecorationColor = "red"; 
                   userInput.value = "";
                 }else {
-                  question.innerHTML = "Incorrect. Try again."
+                  question.innerHTML = `Incorrect. The correct answer is: ${random800.answer}`
                 }     
         });  
       }) 
@@ -195,42 +198,3 @@ let readJeopardyData = async () => {
 
 };
 readJeopardyData();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//*<------------ submit button------------>*//
-// submit.addEventListener('click', function(event){
-//   event.preventDefault();
-//   console.log("The submit button is working")
-//   console.log("The user's answer is:" +  userInput)
-
-//         if(userInput.value.toLowerCase() === random100.answer.toLowerCase()){
-//           scoreAmount += parseInt(firstRowQuestions[i].value.substr(1));
-//           question.innerHTML = "Correct!"
-//           scoreAmount.innerHTML = `${scoreAmount + random100.value}`;
-//         }else{
-//               question.innerHTML = "Incorrect. Try again."
-//         }
-
-//   userInput.value = "";
-//   question.innerHTML = "The question will appear here:";
-// });
-
-
-// `${scoreAmount + random100.value}`;
-

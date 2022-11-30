@@ -23,6 +23,7 @@ body{
   align-items: center;
   justify-content: center;
   font-size:x-large;
+  font-weight: 900;
 }
 
 #game-board {
@@ -62,4 +63,8 @@ font-size: large;
 }
 #input-group{
   width: 500px;
+}
+
+#jeopardy-theme {
+  display: none;
 }
